@@ -8,203 +8,201 @@ export const dsbData = {
     height: 960,
   },
   violations: [
-    [
-      {
-        id: "landmark-one-main",
-        impact: "moderate",
-        tags: ["cat.semantics", "best-practice"],
-        description: "Ensures the document has a main landmark",
-        help: "Document should have one main landmark",
-        helpUrl: "https://dequeuniversity.com/rules/axe/4.9/landmark-one-main?application=axe-puppeteer",
-        nodes: [
-          {
-            any: [],
-            all: [
-              {
-                id: "page-has-main",
-                data: null,
-                relatedNodes: [],
-                impact: "moderate",
-                message: "Document does not have a main landmark",
+    {
+      id: "landmark-one-main",
+      impact: "moderate",
+      tags: ["cat.semantics", "best-practice"],
+      description: "Ensures the document has a main landmark",
+      help: "Document should have one main landmark",
+      helpUrl: "https://dequeuniversity.com/rules/axe/4.9/landmark-one-main?application=axe-puppeteer",
+      nodes: [
+        {
+          any: [],
+          all: [
+            {
+              id: "page-has-main",
+              data: null,
+              relatedNodes: [],
+              impact: "moderate",
+              message: "Document does not have a main landmark",
+            },
+          ],
+          none: [],
+          impact: "moderate",
+          html: '<html class="js no-flash svg notification flexbox placeholder cssanimations texttrackapi track inputsearchevent checked csstransitions svgclippaths inlinesvg opacity target supports csstransforms3d no-time no-contains noScroll" lang="da" style="">',
+          target: ["html"],
+          failureSummary: "Fix all of the following:\n  Document does not have a main landmark",
+        },
+      ],
+    },
+    {
+      id: "region",
+      impact: "moderate",
+      tags: ["cat.keyboard", "best-practice"],
+      description: "Ensures all page content is contained by landmarks",
+      help: "All page content should be contained by landmarks",
+      helpUrl: "https://dequeuniversity.com/rules/axe/4.9/region?application=axe-puppeteer",
+      nodes: [
+        {
+          any: [
+            {
+              id: "region",
+              data: {
+                isIframe: false,
               },
-            ],
-            none: [],
-            impact: "moderate",
-            html: '<html class="js no-flash svg notification flexbox placeholder cssanimations texttrackapi track inputsearchevent checked csstransitions svgclippaths inlinesvg opacity target supports csstransforms3d no-time no-contains noScroll" lang="da" style="">',
-            target: ["html"],
-            failureSummary: "Fix all of the following:\n  Document does not have a main landmark",
-          },
-        ],
-      },
-      {
-        id: "region",
-        impact: "moderate",
-        tags: ["cat.keyboard", "best-practice"],
-        description: "Ensures all page content is contained by landmarks",
-        help: "All page content should be contained by landmarks",
-        helpUrl: "https://dequeuniversity.com/rules/axe/4.9/region?application=axe-puppeteer",
-        nodes: [
-          {
-            any: [
-              {
-                id: "region",
-                data: {
-                  isIframe: false,
-                },
-                relatedNodes: [],
-                impact: "moderate",
-                message: "Some page content is not contained by landmarks",
+              relatedNodes: [],
+              impact: "moderate",
+              message: "Some page content is not contained by landmarks",
+            },
+          ],
+          all: [],
+          none: [],
+          impact: "moderate",
+          html: '<h1 class="deck__title">Find rejse og pris i Danmark</h1>',
+          target: [".deck__title"],
+          failureSummary: "Fix any of the following:\n  Some page content is not contained by landmarks",
+        },
+        {
+          any: [
+            {
+              id: "region",
+              data: {
+                isIframe: false,
               },
-            ],
-            all: [],
-            none: [],
-            impact: "moderate",
-            html: '<h1 class="deck__title">Find rejse og pris i Danmark</h1>',
-            target: [".deck__title"],
-            failureSummary: "Fix any of the following:\n  Some page content is not contained by landmarks",
-          },
-          {
-            any: [
-              {
-                id: "region",
-                data: {
-                  isIframe: false,
-                },
-                relatedNodes: [],
-                impact: "moderate",
-                message: "Some page content is not contained by landmarks",
+              relatedNodes: [],
+              impact: "moderate",
+              message: "Some page content is not contained by landmarks",
+            },
+          ],
+          all: [],
+          none: [],
+          impact: "moderate",
+          html: '<div class="form-label"><label class="" for="DepartLocation1">Fra</label></div>',
+          target: [".search-box__from > div > .form-field--text.form-field > .form-label"],
+          failureSummary: "Fix any of the following:\n  Some page content is not contained by landmarks",
+        },
+        {
+          any: [
+            {
+              id: "region",
+              data: {
+                isIframe: false,
               },
-            ],
-            all: [],
-            none: [],
-            impact: "moderate",
-            html: '<div class="form-label"><label class="" for="DepartLocation1">Fra</label></div>',
-            target: [".search-box__from > div > .form-field--text.form-field > .form-label"],
-            failureSummary: "Fix any of the following:\n  Some page content is not contained by landmarks",
-          },
-          {
-            any: [
-              {
-                id: "region",
-                data: {
-                  isIframe: false,
-                },
-                relatedNodes: [],
-                impact: "moderate",
-                message: "Some page content is not contained by landmarks",
+              relatedNodes: [],
+              impact: "moderate",
+              message: "Some page content is not contained by landmarks",
+            },
+          ],
+          all: [],
+          none: [],
+          impact: "moderate",
+          html: '<div role="combobox" aria-haspopup="listbox" aria-owns="react-autowhatever-DepartLocation" aria-expanded="false">',
+          target: ['.search-box__from > div > .form-field--text.form-field > .form-inputs--clear.form-inputs > div[role="combobox"][aria-haspopup="listbox"]'],
+          failureSummary: "Fix any of the following:\n  Some page content is not contained by landmarks",
+        },
+        {
+          any: [
+            {
+              id: "region",
+              data: {
+                isIframe: false,
               },
-            ],
-            all: [],
-            none: [],
-            impact: "moderate",
-            html: '<div role="combobox" aria-haspopup="listbox" aria-owns="react-autowhatever-DepartLocation" aria-expanded="false">',
-            target: ['.search-box__from > div > .form-field--text.form-field > .form-inputs--clear.form-inputs > div[role="combobox"][aria-haspopup="listbox"]'],
-            failureSummary: "Fix any of the following:\n  Some page content is not contained by landmarks",
-          },
-          {
-            any: [
-              {
-                id: "region",
-                data: {
-                  isIframe: false,
-                },
-                relatedNodes: [],
-                impact: "moderate",
-                message: "Some page content is not contained by landmarks",
+              relatedNodes: [],
+              impact: "moderate",
+              message: "Some page content is not contained by landmarks",
+            },
+          ],
+          all: [],
+          none: [],
+          impact: "moderate",
+          html: '<div class="form-label"><label class="" for="ArriveLocation2">Til</label></div>',
+          target: [".search-box__to > div > .form-field--text.form-field > .form-label"],
+          failureSummary: "Fix any of the following:\n  Some page content is not contained by landmarks",
+        },
+        {
+          any: [
+            {
+              id: "region",
+              data: {
+                isIframe: false,
               },
-            ],
-            all: [],
-            none: [],
-            impact: "moderate",
-            html: '<div class="form-label"><label class="" for="ArriveLocation2">Til</label></div>',
-            target: [".search-box__to > div > .form-field--text.form-field > .form-label"],
-            failureSummary: "Fix any of the following:\n  Some page content is not contained by landmarks",
-          },
-          {
-            any: [
-              {
-                id: "region",
-                data: {
-                  isIframe: false,
-                },
-                relatedNodes: [],
-                impact: "moderate",
-                message: "Some page content is not contained by landmarks",
+              relatedNodes: [],
+              impact: "moderate",
+              message: "Some page content is not contained by landmarks",
+            },
+          ],
+          all: [],
+          none: [],
+          impact: "moderate",
+          html: '<div role="combobox" aria-haspopup="listbox" aria-owns="react-autowhatever-ArriveLocation" aria-expanded="false">',
+          target: ['.search-box__to > div > .form-field--text.form-field > .form-inputs--clear.form-inputs > div[role="combobox"][aria-haspopup="listbox"]'],
+          failureSummary: "Fix any of the following:\n  Some page content is not contained by landmarks",
+        },
+        {
+          any: [
+            {
+              id: "region",
+              data: {
+                isIframe: false,
               },
-            ],
-            all: [],
-            none: [],
-            impact: "moderate",
-            html: '<div role="combobox" aria-haspopup="listbox" aria-owns="react-autowhatever-ArriveLocation" aria-expanded="false">',
-            target: ['.search-box__to > div > .form-field--text.form-field > .form-inputs--clear.form-inputs > div[role="combobox"][aria-haspopup="listbox"]'],
-            failureSummary: "Fix any of the following:\n  Some page content is not contained by landmarks",
-          },
-          {
-            any: [
-              {
-                id: "region",
-                data: {
-                  isIframe: false,
-                },
-                relatedNodes: [],
-                impact: "moderate",
-                message: "Some page content is not contained by landmarks",
-              },
-            ],
-            all: [],
-            none: [],
-            impact: "moderate",
-            html: '<section class="grid-container">',
-            target: [".grid-container"],
-            failureSummary: "Fix any of the following:\n  Some page content is not contained by landmarks",
-          },
-        ],
-      },
-      {
-        id: "tabindex",
-        impact: "serious",
-        tags: ["cat.keyboard", "best-practice"],
-        description: "Ensures tabindex attribute values are not greater than 0",
-        help: "Elements should not have tabindex greater than zero",
-        helpUrl: "https://dequeuniversity.com/rules/axe/4.9/tabindex?application=axe-puppeteer",
-        nodes: [
-          {
-            any: [
-              {
-                id: "tabindex",
-                data: null,
-                relatedNodes: [],
-                impact: "serious",
-                message: "Element has a tabindex greater than 0",
-              },
-            ],
-            all: [],
-            none: [],
-            impact: "serious",
-            html: '<input name="criteria[0].DepartLocation.Name" type="text" autocomplete="off" aria-autocomplete="list" aria-controls="react-autowhatever-DepartLocation" placeholder="Station / stoppested / vej / by / lokalitet" tabindex="1" value="">',
-            target: ['.search-box__from > div > .form-field--text.form-field > .form-inputs--clear.form-inputs > div[role="combobox"][aria-haspopup="listbox"] > .form-input--text.form-input > input[aria-autocomplete="list"][autocomplete="off"][value=""]'],
-            failureSummary: "Fix any of the following:\n  Element has a tabindex greater than 0",
-          },
-          {
-            any: [
-              {
-                id: "tabindex",
-                data: null,
-                relatedNodes: [],
-                impact: "serious",
-                message: "Element has a tabindex greater than 0",
-              },
-            ],
-            all: [],
-            none: [],
-            impact: "serious",
-            html: '<input name="criteria[0].ArriveLocation.Name" type="text" autocomplete="off" aria-autocomplete="list" aria-controls="react-autowhatever-ArriveLocation" placeholder="Station / stoppested / vej / by / lokalitet" tabindex="2" value="">',
-            target: ['.search-box__to > div > .form-field--text.form-field > .form-inputs--clear.form-inputs > div[role="combobox"][aria-haspopup="listbox"] > .form-input--text.form-input > input[aria-autocomplete="list"][autocomplete="off"][value=""]'],
-            failureSummary: "Fix any of the following:\n  Element has a tabindex greater than 0",
-          },
-        ],
-      },
-    ],
+              relatedNodes: [],
+              impact: "moderate",
+              message: "Some page content is not contained by landmarks",
+            },
+          ],
+          all: [],
+          none: [],
+          impact: "moderate",
+          html: '<section class="grid-container">',
+          target: [".grid-container"],
+          failureSummary: "Fix any of the following:\n  Some page content is not contained by landmarks",
+        },
+      ],
+    },
+    {
+      id: "tabindex",
+      impact: "serious",
+      tags: ["cat.keyboard", "best-practice"],
+      description: "Ensures tabindex attribute values are not greater than 0",
+      help: "Elements should not have tabindex greater than zero",
+      helpUrl: "https://dequeuniversity.com/rules/axe/4.9/tabindex?application=axe-puppeteer",
+      nodes: [
+        {
+          any: [
+            {
+              id: "tabindex",
+              data: null,
+              relatedNodes: [],
+              impact: "serious",
+              message: "Element has a tabindex greater than 0",
+            },
+          ],
+          all: [],
+          none: [],
+          impact: "serious",
+          html: '<input name="criteria[0].DepartLocation.Name" type="text" autocomplete="off" aria-autocomplete="list" aria-controls="react-autowhatever-DepartLocation" placeholder="Station / stoppested / vej / by / lokalitet" tabindex="1" value="">',
+          target: ['.search-box__from > div > .form-field--text.form-field > .form-inputs--clear.form-inputs > div[role="combobox"][aria-haspopup="listbox"] > .form-input--text.form-input > input[aria-autocomplete="list"][autocomplete="off"][value=""]'],
+          failureSummary: "Fix any of the following:\n  Element has a tabindex greater than 0",
+        },
+        {
+          any: [
+            {
+              id: "tabindex",
+              data: null,
+              relatedNodes: [],
+              impact: "serious",
+              message: "Element has a tabindex greater than 0",
+            },
+          ],
+          all: [],
+          none: [],
+          impact: "serious",
+          html: '<input name="criteria[0].ArriveLocation.Name" type="text" autocomplete="off" aria-autocomplete="list" aria-controls="react-autowhatever-ArriveLocation" placeholder="Station / stoppested / vej / by / lokalitet" tabindex="2" value="">',
+          target: ['.search-box__to > div > .form-field--text.form-field > .form-inputs--clear.form-inputs > div[role="combobox"][aria-haspopup="listbox"] > .form-input--text.form-input > input[aria-autocomplete="list"][autocomplete="off"][value=""]'],
+          failureSummary: "Fix any of the following:\n  Element has a tabindex greater than 0",
+        },
+      ],
+    },
   ],
   passes: [
     {
