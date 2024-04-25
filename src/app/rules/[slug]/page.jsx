@@ -9,15 +9,17 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function page() {
-  console.log(reglerData);
+export default async function page({ params }) {
+  const { slug } = params;
+
+  const oneData = reglerData.filter((oneRule) => oneRule.id === slug);
+  const virker = oneData[0];
+  console.log();
   return (
-    <main>
-      <h1>DATA ID:{reglerData.id}</h1>
-      <p>DATA IMPACT:{reglerData.impact}</p>
-      {reglerData.map((regel) => {
-        return <Test key={regel.id} data={regel} />;
-      })}
-    </main>
+    <>
+      <h1>{virker.id}</h1>
+      <p>{virker.description}</p>
+      <p>{virker.impact}</p>
+    </>
   );
 }
