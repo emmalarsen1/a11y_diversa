@@ -14,23 +14,37 @@ export default async function Page() {
   console.log(violations);
 
   return (
-    <main>
-      <h1>Report for {data.url}</h1>
-      <p>Found {data.violations.length} issues</p>
-      {violations.map((oneViolation) => {
-        return (
-          <p>
-            {oneViolation.id} og jeg er {oneViolation.impact} mit link er{" "}
-            <Link href={`/rules/${oneViolation.id}`}>her</Link>
-          </p>
-        );
-      })}
-      <Image
-        alt={data.url}
-        src={data.screenshot.url}
-        width={data.screenshot.width}
-        height={data.screenshot.height}
-      />
+    <main class="grid grid-cols-2 gap-4">
+      <section>
+        <h1>Report for {data.url}</h1>
+        <p>Score:</p>
+        <Image
+          alt={data.url}
+          src={data.screenshot.url}
+          width={data.screenshot.width}
+          height={data.screenshot.height}
+        />
+      </section>
+      <section>
+        <p>Found {data.violations.length} issues</p>
+        {violations.map((oneViolation) => {
+          return (
+            <section>
+              <div>
+                <p>
+                  {oneViolation.id} og mit link er{" "}
+                  <Link href={`/rules/${oneViolation.id}`}>her</Link>
+                </p>
+                <p>jeg er {oneViolation.impact}</p>
+                <p>
+                  og mit link er{" "}
+                  <Link href={`/rules/${oneViolation.id}`}>her</Link>
+                </p>
+              </div>
+            </section>
+          );
+        })}
+      </section>
     </main>
   );
 }
