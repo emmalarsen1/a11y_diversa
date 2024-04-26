@@ -7,7 +7,7 @@ function page() {
       <h1>A11y-regel oversigt</h1>
       <section>
         {reglerData.map((data) => (
-          <p>
+          <p key={data.id}>
             {data.id} <Link href={`/rules/${data.id}`}>Læs mere</Link>
           </p>
         ))}

@@ -18,27 +18,20 @@ export default async function Page() {
       <section>
         <h1>Report for {data.url}</h1>
         <p>Score:</p>
-        <Image
-          alt={data.url}
-          src={data.screenshot.url}
-          width={data.screenshot.width}
-          height={data.screenshot.height}
-        />
+        <Image alt={data.url} src={data.screenshot.url} width={data.screenshot.width} height={data.screenshot.height} />
       </section>
       <section>
         <p>Found {data.violations.length} issues</p>
         {violations.map((oneViolation) => {
           return (
-            <section>
+            <section key={oneViolation.id}>
               <div>
                 <p>
-                  {oneViolation.id} og mit link er{" "}
-                  <Link href={`/rules/${oneViolation.id}`}>her</Link>
+                  {oneViolation.id} og mit link er <Link href={`/rules/${oneViolation.id}`}>her</Link>
                 </p>
                 <p>jeg er {oneViolation.impact}</p>
                 <p>
-                  og mit link er{" "}
-                  <Link href={`/rules/${oneViolation.id}`}>her</Link>
+                  og mit link er <Link href={`/rules/${oneViolation.id}`}>her</Link>
                 </p>
               </div>
             </section>
