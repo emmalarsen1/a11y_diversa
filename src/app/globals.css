@@ -19,3 +19,7 @@
   --colors-grey-80: #333333;
   --colors-grey-100: #000000;
 }
+
+html {
+  background-color: #f7f6e8;
+}
