@@ -2,7 +2,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <>
-      <div class="flex flex-col items-center gap-2">
+      <div class="flex flex-col items-center gap-2 whitespace-normal">
         <h1 class="text-5xl text-center m-2.5 mt-14">Ally Check</h1>
         <p class="m-3 text-center max-w-md mx-auto">Lorem ipsum dolor sit amet consectetur adipisicing elit. At, blanditiis? Illum ratione ad voluptate, corporis facere placeat officia. Eius assumenda est, dolores repellendus commodi quod maxime odio id quaerat. Alias?</p>
         <form class="grid gap-7" action="/results">
