@@ -11,7 +11,7 @@ function NavButton() {
       </div>
       <div class="mobile-icon md:hidden">
         <Link href={`./regeloversigt`}>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14" height="25" width="25" id="Bullet-List--Streamline-Core.svg">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14" height="30" width="30" id="Bullet-List--Streamline-Core.svg">
             <desc>Bullet List Streamline Icon: https://streamlinehq.com</desc>
             <g id="bullet-list--points-bullet-unordered-list-lists-bullets">
               <path id="Vector" stroke="#69e3fc" stroke-linecap="round" stroke-linejoin="round" d="M1 3c0.27614 0 0.5 -0.22386 0.5 -0.5S1.27614 2 1 2c-0.276142 0 -0.5 0.22386 -0.5 0.5s0.223858 0.5 0.5 0.5Z" stroke-width="1"></path>
