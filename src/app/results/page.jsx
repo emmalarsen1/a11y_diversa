@@ -14,25 +14,33 @@ export default async function Page() {
   console.log(violations);
 
   return (
-    <main class="grid grid-cols-2 gap-4">
-      <section>
-        <h1>Report for {data.url}</h1>
-        <p>Score:</p>
-        <Image alt={data.url} src={data.screenshot.url} width={data.screenshot.width} height={data.screenshot.height} />
+    <main class="flex-auto gap-3 mx-4 lg:grid grid-cols-2 gap-20 my-20 mx-10">
+      <section class="">
+        <h1 class="text-base lg:text-xl font-bold">Resultat for {data.url}</h1>
+        <p class="text-base lg:text-xl font-medium">Score:</p>
+        <Image
+          alt={data.url}
+          src={data.screenshot.url}
+          width={data.screenshot.width}
+          height={data.screenshot.height}
+        />
       </section>
       <section>
-        <p>Found {data.violations.length} issues</p>
+        <p class="text-base lg:text-xl font-bold">
+          Problemer: {data.violations.length}
+        </p>
         {violations.map((oneViolation) => {
           return (
-            <section key={oneViolation.id}>
-              <div>
-                <p>
-                  {oneViolation.id} og mit link er <Link href={`/rules/${oneViolation.id}`}>her</Link>
-                </p>
-                <p>jeg er {oneViolation.impact}</p>
-                <p>
-                  og mit link er <Link href={`/rules/${oneViolation.id}`}>her</Link>
-                </p>
+            <section key={oneViolation.id} class="gap-y-12">
+              <div class="box-border p-4 border-2 bg-turquoise-00 border-transparent border-b-neutral-950 ">
+                <p>{oneViolation.id}</p>
+                <p>{oneViolation.impact}</p>
+                <div>
+                  <p class="text-orange-70">
+                    {" "}
+                    <Link href={`/rules/${oneViolation.id}`}>LÆS MERE</Link>
+                  </p>
+                </div>
               </div>
             </section>
           );
