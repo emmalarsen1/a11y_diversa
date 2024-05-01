@@ -6,7 +6,7 @@ function NavButton() {
     <>
       <div class="m-4 desktop-icon hidden md:block">
         <Link class=" bg-[#69e3fc] place-items-center hover:bg-[#02E8FE] py-3 px-5  rounded-lg active:bg-[#4BCBE0] text-center font-['Libre_Baskerville'] text-lg font-semibold" href={`./regeloversigt`}>
-          Ally-regler
+          A11y-regler
         </Link>
       </div>
       <div class="mobile-icon md:hidden">
