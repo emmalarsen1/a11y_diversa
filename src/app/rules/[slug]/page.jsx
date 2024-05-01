@@ -17,9 +17,11 @@ export default async function page({ params }) {
   console.log();
   return (
     <>
-      <h1>{virker.id}</h1>
-      <p>{virker.description}</p>
-      <p>{virker.impact}</p>
+      <section class="h-lvh">
+        <h1 class="text-5xl">{virker.id}</h1>
+        <h2 class="text-2xl">{virker.impact}</h2>
+        <p>{virker.description}</p>
+      </section>
     </>
   );
 }
