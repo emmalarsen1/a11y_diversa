@@ -1,6 +1,9 @@
 import Image from "next/image";
 import { reglerData } from "@/data/reglerData";
 import Test from "@/app/components/Test";
+import Gauge from "@/app/components/Gauge";
+
+//Component with default values
 
 // Return a list of `params` to populate the [slug] dynamic segment
 export async function generateStaticParams() {
@@ -8,6 +11,17 @@ export async function generateStaticParams() {
     slug: post.id,
   }));
 }
+
+const severityMapping = {
+  Moderat: {
+    color: "green",
+    value: "33",
+  },
+  Alvorlig: {
+    color: "red",
+    value: "78",
+  },
+};
 
 export default async function page({ params }) {
   const { slug } = params;
@@ -18,9 +32,14 @@ export default async function page({ params }) {
   return (
     <>
       <section class="h-lvh">
-        <h1 class="text-5xl">{virker.id}</h1>
-        <h2 class="text-2xl">{virker.impact}</h2>
+        <h1 class="text-5xl capitalize">{virker.id}</h1>
+        <h2 class={`text-2xl`} style={{ color: severityMapping[virker.impact].color }}>
+          {virker.impact}
+        </h2>
+        <Gauge value={severityMapping[virker.impact].value} />
         <p>{virker.description}</p>
+        <p>{virker.why}</p>
+        <p>{virker.tags}</p>
       </section>
     </>
   );
