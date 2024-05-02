@@ -67,24 +67,26 @@ export default async function Page({ searchParams }) {
   */
   return (
     <main className=" mx-4 lg:grid grid-cols-2 gap-20 my-20 mx-10">
-      <section className="">
+      <section className="grid gap-10">
         <h1 className="capitalizetext-base lg:text-xl font-bold">
           Resultat for {data.url}
         </h1>
-        <p class="text-base lg:text-xl font-medium">Score:</p>
-        <Gauge
-          className="ulla"
-          style={{ width: "400px" }}
-          value={config.value}
-        />
-        <Image
-          alt={data.url}
-          src={data.screenshot.url}
-          width={data.screenshot.width}
-          height={data.screenshot.height}
-        />
+        {/* <p class="text-base lg:text-xl font-medium">Score:</p> */}
+        <div className="grid grid-cols-2 gap-5">
+          <Gauge
+            // className="ulla"
+            // style={{ width: "400px" }}
+            value={config.value}
+          />
+          <Image
+            alt={data.url}
+            src={data.screenshot.url}
+            width={data.screenshot.width}
+            height={data.screenshot.height}
+          />
+        </div>
       </section>
-      <section>
+      <section className="grid gap-5">
         <p className="text-base lg:text-xl font-bold">
           Problemer: {data.violations.length}
         </p>
@@ -93,7 +95,7 @@ export default async function Page({ searchParams }) {
             return (
               <div
                 key={oneViolation.id}
-                className="flex justify-between box-border border-2 bg-turquoise-00 border-transparent border-b-neutral-950"
+                className="flex justify-between box-border border-2 bg-turquoise-00 border-transparent border-b-neutral-950 p-4"
               >
                 <div>
                   <p className="capitalize">{oneViolation.id}</p>
