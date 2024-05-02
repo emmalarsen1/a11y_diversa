@@ -31,22 +31,14 @@ const severityMapping = {
 
 export default async function Page({ searchParams }) {
   const params = new URLSearchParams(searchParams);
-  const response = await fetch(
-    `https://mmd-a11y-api.vercel.app/api/scan?${params.toString()}`
-  );
+  const response = await fetch(`https://mmd-a11y-api.vercel.app/api/scan?${params.toString()}`);
   const data = await response.json();
   // const data = dsbData;
   const violations = data.violations;
 
-  const hasCritical = violations.some(
-    (violation) => violation.impact === "critical"
-  );
-  const hasSerious = violations.some(
-    (violation) => violation.impact === "serious"
-  );
-  const hasModerate = violations.some(
-    (violation) => violation.impact === "moderate"
-  );
+  const hasCritical = violations.some((violation) => violation.impact === "critical");
+  const hasSerious = violations.some((violation) => violation.impact === "serious");
+  const hasModerate = violations.some((violation) => violation.impact === "moderate");
   const hasMinor = violations.some((violation) => violation.impact === "minor");
 
   let config = {};
@@ -68,9 +60,7 @@ export default async function Page({ searchParams }) {
   return (
     <main className=" mx-4 lg:grid grid-cols-2 gap-20 my-20 mx-10">
       <section className="grid gap-10">
-        <h1 className="capitalizetext-base lg:text-xl font-bold">
-          Resultat for {data.url}
-        </h1>
+        <h1 className="capitalizetext-base lg:text-xl font-bold">Resultat for {data.url}</h1>
         {/* <p class="text-base lg:text-xl font-medium">Score:</p> */}
         <div className="grid grid-cols-2 gap-5">
           <Gauge
@@ -78,25 +68,15 @@ export default async function Page({ searchParams }) {
             // style={{ width: "400px" }}
             value={config.value}
           />
-          <Image
-            alt={data.url}
-            src={data.screenshot.url}
-            width={data.screenshot.width}
-            height={data.screenshot.height}
-          />
+          <Image alt={data.url} src={data.screenshot.url} width={data.screenshot.width} height={data.screenshot.height} />
         </div>
       </section>
       <section className="grid gap-5">
-        <p className="text-base lg:text-xl font-bold">
-          Problemer: {data.violations.length}
-        </p>
+        <p className="text-base lg:text-xl font-bold">Problemer: {data.violations.length}</p>
         <article className="flex flex-col">
           {violations.map((oneViolation) => {
             return (
-              <div
-                key={oneViolation.id}
-                className="flex justify-between box-border border-2 bg-turquoise-00 border-transparent border-b-neutral-950 p-4"
-              >
+              <div key={oneViolation.id} className="flex justify-between box-border border-2 bg-turquoise-00 border-transparent border-b-neutral-950 p-4">
                 <div>
                   <p className="capitalize">{oneViolation.id}</p>
                   <p
