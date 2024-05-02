@@ -13,13 +13,17 @@ export async function generateStaticParams() {
 }
 
 const severityMapping = {
-  Moderat: {
+  Mindre: {
     color: "green",
     value: "33",
   },
+  Moderat: {
+    color: "orange",
+    value: "73",
+  },
   Alvorlig: {
     color: "red",
-    value: "78",
+    value: "98",
   },
 };
 
