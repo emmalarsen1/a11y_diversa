@@ -9,9 +9,9 @@ function error() {
   const data = dsbData;
   return (
     <div>
-      <h1 class="text-3xl font-semibold text-[#ff7733] m-5 mt-24">{data.url}</h1>
-      <h2 class="m-5 mt-20 text-4xl">Noget gik galt</h2>
-      <p class="ml-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis, atque repellendus earum voluptatibus accusantium eligendi iusto unde, vitae molestias animi, reprehenderit beatae harum culpa deserunt velit ex veniam! Aut, tempora?</p>
+      <h1 className="text-3xl font-semibold text-[#ff7733] m-5 mt-24">{data.url}</h1>
+      <h2 className="m-5 mt-20 text-4xl">Noget gik galt</h2>
+      <p className="ml-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis, atque repellendus earum voluptatibus accusantium eligendi iusto unde, vitae molestias animi, reprehenderit beatae harum culpa deserunt velit ex veniam! Aut, tempora?</p>
     </div>
   );
 }
