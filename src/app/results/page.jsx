@@ -4,7 +4,7 @@ import Link from "next/link";
 import Gauge from "../components/Gauge";
 
 // Revalidate route every 30 minutes
-/* export const revalidate = 1800; */
+export const revalidate = 1800;
 
 const severityMapping = {
   noerror: {
@@ -29,11 +29,13 @@ const severityMapping = {
   },
 };
 
-export default async function Page() {
-  /*   const params = new URLSearchParams(searchParams);
-  const response = await fetch(`https://mmd-a11y-api.vercel.app/api/scan?${params.toString()}`);
-  const data = await response.json(); */
-  const data = dsbData;
+export default async function Page({ searchParams }) {
+  const params = new URLSearchParams(searchParams);
+  const response = await fetch(
+    `https://mmd-a11y-api.vercel.app/api/scan?${params.toString()}`
+  );
+  const data = await response.json();
+  // const data = dsbData;
   const violations = data.violations;
 
   const hasCritical = violations.some(
@@ -70,7 +72,11 @@ export default async function Page() {
           Resultat for {data.url}
         </h1>
         <p class="text-base lg:text-xl font-medium">Score:</p>
-        <Gauge className="w-1/4" value={config.value} />
+        <Gauge
+          className="ulla"
+          style={{ width: "400px" }}
+          value={config.value}
+        />
         <Image
           alt={data.url}
           src={data.screenshot.url}
