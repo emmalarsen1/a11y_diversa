@@ -8,7 +8,7 @@ import Footer from "./components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Diversa url-check",
+  title: "Diversa A11y check",
   description: "Denne side tjekker url'en på hjemmesider",
 };
 
