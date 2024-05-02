@@ -2,11 +2,11 @@
 import React from "react";
 import { dsbData } from "@/data/dsbData";
 
-function error() {
-  /*   const params = new URLSearchParams(searchParams);
+async function error() {
+  const params = new URLSearchParams(searchParams);
   const response = await fetch(`https://mmd-a11y-api.vercel.app/api/scan?${params.toString()}`);
-  const data = await response.json(); */
-  const data = dsbData;
+  const data = await response.json();
+  // const data = dsbData;
   return (
     <div className="flex flex-col justify-center items-center h-lvh">
       <h1 className="text-3xl font-semibold text-[#ff7733] m-5 mt-24">{data.url}</h1>
