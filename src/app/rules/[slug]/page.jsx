@@ -31,10 +31,9 @@ const severityMapping = {
 export default async function page({ params }) {
   const { slug } = params;
 
-  if (res.status !== 200) return NotFound();
-
   const oneData = reglerData.filter((oneRule) => oneRule.id === slug);
   const virker = oneData[0];
+  if (!virker) return NotFound();
   console.log();
   return (
     <>
