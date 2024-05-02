@@ -14,9 +14,11 @@ export default async function Page() {
   console.log(violations);
 
   return (
-    <main class="flex-auto gap-3 mx-4 lg:grid grid-cols-2 gap-20 my-20 mx-10">
+    <main class=" mx-4 lg:grid grid-cols-2 gap-20 my-20 mx-10">
       <section class="">
-        <h1 class="text-base lg:text-xl font-bold">Resultat for {data.url}</h1>
+        <h1 class="capitalizetext-base lg:text-xl font-bold">
+          Resultat for {data.url}
+        </h1>
         <p class="text-base lg:text-xl font-medium">Score:</p>
         <Image
           alt={data.url}
@@ -32,10 +34,12 @@ export default async function Page() {
         {violations.map((oneViolation) => {
           return (
             <section key={oneViolation.id} class="gap-y-12">
-              <div class="box-border p-4 border-2 bg-turquoise-00 border-transparent border-b-neutral-950 ">
-                <p>{oneViolation.id}</p>
-                <p>{oneViolation.impact}</p>
+              <div class="flex gap-3 box-border p-4 border-2 bg-turquoise-00 border-transparent border-b-neutral-950 ">
                 <div>
+                  <p class="capitalize">{oneViolation.id}</p>
+                  <p class="capitalize">{oneViolation.impact}</p>
+                </div>
+                <div class="flex content-end">
                   <p class="text-orange-70">
                     {" "}
                     <Link href={`/rules/${oneViolation.id}`}>LÆS MERE</Link>
