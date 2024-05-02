@@ -72,7 +72,11 @@ export default async function Page({ searchParams }) {
           Resultat for {data.url}
         </h1>
         <p class="text-base lg:text-xl font-medium">Score:</p>
-        <Gauge className="w-1/4" value={config.value} />
+        <Gauge
+          className="ulla"
+          style={{ width: "400px" }}
+          value={config.value}
+        />
         <Image
           alt={data.url}
           src={data.screenshot.url}
