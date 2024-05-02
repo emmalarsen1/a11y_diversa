@@ -66,9 +66,9 @@ export default async function Page({ searchParams }) {
   bruge den
   */
   return (
-    <main class=" mx-4 lg:grid grid-cols-2 gap-20 my-20 mx-10">
-      <section class="">
-        <h1 class="capitalizetext-base lg:text-xl font-bold">
+    <main className=" mx-4 lg:grid grid-cols-2 gap-20 my-20 mx-10">
+      <section className="">
+        <h1 className="capitalizetext-base lg:text-xl font-bold">
           Resultat for {data.url}
         </h1>
         <p class="text-base lg:text-xl font-medium">Score:</p>
@@ -85,7 +85,7 @@ export default async function Page({ searchParams }) {
         />
       </section>
       <section>
-        <p class="text-base lg:text-xl font-bold">
+        <p className="text-base lg:text-xl font-bold">
           Problemer: {data.violations.length}
         </p>
         <article className="flex flex-col">
@@ -93,10 +93,10 @@ export default async function Page({ searchParams }) {
             return (
               <div
                 key={oneViolation.id}
-                class="flex justify-between box-border border-2 bg-turquoise-00 border-transparent border-b-neutral-950"
+                className="flex justify-between box-border border-2 bg-turquoise-00 border-transparent border-b-neutral-950"
               >
                 <div>
-                  <p class="capitalize">{oneViolation.id}</p>
+                  <p className="capitalize">{oneViolation.id}</p>
                   <p
                     className={`capitalize`}
                     style={{
@@ -106,8 +106,8 @@ export default async function Page({ searchParams }) {
                     {oneViolation.impact}
                   </p>
                 </div>
-                <div class="flex items-center">
-                  <p class="text-orange-70 underline">
+                <div className="flex items-center">
+                  <p className="text-orange-70 underline">
                     {" "}
                     <Link href={`/rules/${oneViolation.id}`}>LÆS MERE</Link>
                   </p>
