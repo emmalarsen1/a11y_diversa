@@ -72,11 +72,7 @@ export default async function Page({ searchParams }) {
           Resultat for {data.url}
         </h1>
         <p class="text-base lg:text-xl font-medium">Score:</p>
-        <Gauge
-          className="ulla"
-          style={{ width: "400px" }}
-          value={config.value}
-        />
+        <Gauge className="w-1/4" value={config.value} />
         <Image
           alt={data.url}
           src={data.screenshot.url}
@@ -88,10 +84,13 @@ export default async function Page({ searchParams }) {
         <p class="text-base lg:text-xl font-bold">
           Problemer: {data.violations.length}
         </p>
-        {violations.map((oneViolation) => {
-          return (
-            <section key={oneViolation.id} class="gap-y-12">
-              <div class="flex gap-3 box-border p-4 border-2 bg-turquoise-00 border-transparent border-b-neutral-950 ">
+        <article className="flex flex-col">
+          {violations.map((oneViolation) => {
+            return (
+              <div
+                key={oneViolation.id}
+                class="flex justify-between box-border border-2 bg-turquoise-00 border-transparent border-b-neutral-950"
+              >
                 <div>
                   <p class="capitalize">{oneViolation.id}</p>
                   <p
@@ -103,16 +102,16 @@ export default async function Page({ searchParams }) {
                     {oneViolation.impact}
                   </p>
                 </div>
-                <div class="flex content-end">
-                  <p class="text-orange-70">
+                <div class="flex items-center">
+                  <p class="text-orange-70 underline">
                     {" "}
                     <Link href={`/rules/${oneViolation.id}`}>LÆS MERE</Link>
                   </p>
                 </div>
               </div>
-            </section>
-          );
-        })}
+            );
+          })}
+        </article>
       </section>
     </main>
   );

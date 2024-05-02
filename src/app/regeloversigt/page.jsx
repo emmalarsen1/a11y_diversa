@@ -6,15 +6,15 @@ function page() {
   return (
     <>
       <section class="flex flex-col justify-center items-center h-lvh">
-        <h1 class="text-5xl">A11y-regel oversigt</h1>
-        <article class="bg-cyan-200 py-2 px-2 ">
+        <h1 class="text-5xl m-2.5">A11y-regel oversigt</h1>
+        <article className="flex flex-col">
           {reglerData.map((data) => (
-            <p class="text-3xl border-b-2 border-black flex place-self-start capitalize" key={data.id}>
-              {data.id}{" "}
-              <Link class="text-[#FF7733] underline flex place-self-end uppercase" href={`/rules/${data.id}`}>
+            <div class="flex justify-between box-border border-2 bg-turquoise-00 border-transparent border-b-neutral-950" key={data.id}>
+              <p class="flex capitalize">{data.id} </p>
+              <Link class="text-[#FF7733] flex underline uppercase" href={`/rules/${data.id}`}>
                 Læs mere
               </Link>
-            </p>
+            </div>
           ))}
         </article>
       </section>
