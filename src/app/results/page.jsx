@@ -36,15 +36,9 @@ export default async function Page() {
   const data = dsbData;
   const violations = data.violations;
 
-  const hasCritical = violations.some(
-    (violation) => violation.impact === "critical"
-  );
-  const hasSerious = violations.some(
-    (violation) => violation.impact === "serious"
-  );
-  const hasModerate = violations.some(
-    (violation) => violation.impact === "moderate"
-  );
+  const hasCritical = violations.some((violation) => violation.impact === "critical");
+  const hasSerious = violations.some((violation) => violation.impact === "serious");
+  const hasModerate = violations.some((violation) => violation.impact === "moderate");
   const hasMinor = violations.some((violation) => violation.impact === "minor");
 
   let config = {};
@@ -66,23 +60,16 @@ export default async function Page() {
   return (
     <main class=" mx-4 lg:grid grid-cols-2 gap-20 my-20 mx-10">
       <section class="">
-        <h1 class="capitalizetext-base lg:text-xl font-bold">
-          Resultat for {data.url}
-        </h1>
+        <h1 class="capitalizetext-base lg:text-xl font-bold">Resultat for {data.url}</h1>
         <p class="text-base lg:text-xl font-medium">Score:</p>
         <Gauge className="w-1/4" value={config.value} />
-        <Image
-          alt={data.url}
-          src={data.screenshot.url}
-          width={data.screenshot.width}
-          height={data.screenshot.height}
-        />
+        <Image alt={data.url} src={data.screenshot.url} width={data.screenshot.width} height={data.screenshot.height} />
       </section>
       <section>
         <p class="text-base lg:text-xl font-bold">Problemer: {data.violations.length}</p>
         {violations.map((oneViolation) => {
           return (
-            <section key={oneViolation.id} class="gap-y-12">
+            <article key={oneViolation.id} class="gap-y-12">
               <div class="flex gap-3 box-border p-4 border-2 bg-turquoise-00 border-transparent border-b-neutral-950 ">
                 <div>
                   <p class="capitalize">{oneViolation.id}</p>
@@ -102,9 +89,9 @@ export default async function Page() {
                   </p>
                 </div>
               </div>
-            );
-          })}
-        </article>
+            </article>
+          );
+        })}
       </section>
     </main>
   );
