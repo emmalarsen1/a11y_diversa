@@ -20,17 +20,10 @@ export default async function Page() {
           Resultat for {data.url}
         </h1>
         <p class="text-base lg:text-xl font-medium">Score:</p>
-        <Image
-          alt={data.url}
-          src={data.screenshot.url}
-          width={data.screenshot.width}
-          height={data.screenshot.height}
-        />
+        <Image alt={data.url} src={data.screenshot.url} width={data.screenshot.width} height={data.screenshot.height} />
       </section>
       <section>
-        <p class="text-base lg:text-xl font-bold">
-          Problemer: {data.violations.length}
-        </p>
+        <p class="text-base lg:text-xl font-bold">Problemer: {data.violations.length}</p>
         {violations.map((oneViolation) => {
           return (
             <section key={oneViolation.id} class="gap-y-12">
