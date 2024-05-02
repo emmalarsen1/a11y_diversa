@@ -2,6 +2,7 @@ import Image from "next/image";
 import { reglerData } from "@/data/reglerData";
 import Test from "@/app/components/Test";
 import Gauge from "@/app/components/Gauge";
+import NotFound from "@/app/not-found";
 
 //Component with default values
 
@@ -32,6 +33,7 @@ export default async function page({ params }) {
 
   const oneData = reglerData.filter((oneRule) => oneRule.id === slug);
   const virker = oneData[0];
+  if (!virker) return NotFound();
   console.log();
   return (
     <>
