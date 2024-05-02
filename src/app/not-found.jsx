@@ -1,3 +1,6 @@
+export const metadata = {
+  title: "Siden findes ikke",
+};
 export default function NotFound() {
   return (
     <main className="flex flex-col justify-center items-center h-lvh">
