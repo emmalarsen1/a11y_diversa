@@ -40,7 +40,7 @@ export default async function page({ params }) {
         <h2 class={`text-2xl`} style={{ color: severityMapping[virker.impact].color }}>
           {virker.impact}
         </h2>
-        {/* <Gauge value={severityMapping[virker.impact].value} /> */}
+        <Gauge value={severityMapping[virker.impact].value} />
         <p>{virker.description}</p>
         <p>{virker.why}</p>
         <p>{virker.tags}</p>
