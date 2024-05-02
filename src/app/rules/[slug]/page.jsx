@@ -37,11 +37,14 @@ export default async function page({ params }) {
   console.log();
   return (
     <>
-      <section class="h-lvh">
-        <h1 class="text-5xl capitalize">{virker.id}</h1>
-        <h2 class={`text-2xl`} style={{ color: severityMapping[virker.impact].color }}>
-          {virker.impact}
-        </h2>
+      <section class="flex flex-col gap-3 h-lvh mx-8 text-base max-w-prose">
+        <h1 class="text-5xl mt-3 capitalize">{virker.id}</h1>
+        <div>
+          <span class={`text-2xl`} style={{ color: severityMapping[virker.impact].color }}>
+            {virker.impact}
+          </span>
+          <span className="text-2xl"> indflydelse.</span>
+        </div>
         <p>{virker.description}</p>
         <p>{virker.why}</p>
         <p>{virker.tags}</p>
