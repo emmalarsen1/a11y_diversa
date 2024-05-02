@@ -2,6 +2,7 @@ import Image from "next/image";
 import { reglerData } from "@/data/reglerData";
 import Test from "@/app/components/Test";
 import Gauge from "@/app/components/Gauge";
+import NotFound from "@/app/not-found";
 
 //Component with default values
 
